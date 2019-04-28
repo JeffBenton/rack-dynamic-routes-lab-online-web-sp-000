@@ -9,7 +9,8 @@ class Application
     
     if req.path.match(/items/)
       item = req.path.split("/items/").last
-      if @@items.include?(item.name)
+      binding.pry
+      if @@items.include?(item)
         resp.write "#{item.price}"
         resp.status = 200
       end
