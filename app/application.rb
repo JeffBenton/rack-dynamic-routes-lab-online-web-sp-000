@@ -9,6 +9,7 @@ class Application
     
     if req.path.match(/items/)
       search_item = req.path.split("/items/").last
+      binding.pry
       @@items.each do |item|
         if item.name == search_item
           resp.write "#{item.price}"
