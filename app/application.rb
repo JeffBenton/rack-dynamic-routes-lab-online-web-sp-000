@@ -4,7 +4,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     
-    if 
+    if req.
     
     resp.finish
   end
