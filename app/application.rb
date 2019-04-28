@@ -11,6 +11,7 @@ class Application
       if @@items.include?(item)
         resp.write "#{item.price}"
         resp.status = 200
+      end
     elsif
       resp.write "Route not found"
       resp.status = 404
