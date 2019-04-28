@@ -1,3 +1,4 @@
+require 'pry'
 class Application
   
   @@items = []
@@ -8,6 +9,7 @@ class Application
     
     if req.path.match(/items/)
       item = req.path.split("/items").last
+      binding.pry
       if @@items.include?(item)
         resp.write "#{item.price}"
         resp.status = 200
