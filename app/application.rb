@@ -7,7 +7,7 @@ class Application
     if req.path.match(/items/)
       item = req.path.split("/items").last
     elsif
-    
+      
     end
     
     resp.finish
