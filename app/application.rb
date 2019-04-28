@@ -9,8 +9,8 @@ class Application
     
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last
-      item = @@items.find { |i| i.name = item_name }
       binding.pry
+      item = @@items.find { |i| i.name = item_name }
       if item
         resp.write "#{item.price}"
         resp.status = 200
