@@ -8,10 +8,13 @@ class Application
     req = Rack::Request.new(env)
     
     if req.path.match(/items/)
-      item = req.path.split("/items/").last
-      if @@items.include?(item)
-        resp.write "#{item.price}"
-        resp.status = 200
+      search_item = req.path.split("/items/").last
+      @@items.each do |item|
+        if item.name == search_item
+          resp.write "#{item.price}"
+          resp.status = 200
+          return
+        end
       end
     elsif
       resp.write "Route not found"
